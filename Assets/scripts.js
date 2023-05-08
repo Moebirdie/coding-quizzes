@@ -25,24 +25,24 @@ var questionLiteral = document.getElementById('question');
 
 var questionsPool = [];
 var questionsUsed = [[{"question": "Question 1", "text": "answer1","data-result":false},
-                 {"question": "Question 1", "text": "answer2","data-result":false},
-                 {"question": "Question 1", "text": "answer3","data-result":true},
-                 {"question": "Question 1", "text": "answer4","data-result":false}
+                 {"question": "Question 1", "text": "Q1answer2","data-result":false},
+                 {"question": "Question 1", "text": "Q1answer3","data-result":true},
+                 {"question": "Question 1", "text": "Q1answer4","data-result":false}
                 ],
-                [{"question": "Question 2", "text": "answer1","data-result":false},
-                 {"question": "Question 2", "text": "answer2","data-result":false},
-                 {"question": "Question 2", "text": "answer3","data-result":true},
-                 {"question": "Question 2", "text": "answer4","data-result":false}
+                [{"question": "Question 2", "text": "Q2answer1","data-result":false},
+                 {"question": "Question 2", "text": "Q2answer2","data-result":false},
+                 {"question": "Question 2", "text": "Q2answer3","data-result":true},
+                 {"question": "Question 2", "text": "Q2answer4","data-result":false}
                 ],
-                [{"question": "Question 3", "text": "answer1","data-result":false},
-                 {"question": "Question 3", "text": "answer2","data-result":false},
-                 {"question": "Question 3", "text": "answer3","data-result":true},
-                 {"question": "Question 3", "text": "answer4","data-result":false}
+                [{"question": "Question 3", "text": "Q3answer1","data-result":false},
+                 {"question": "Question 3", "text": "Q3answer2","data-result":false},
+                 {"question": "Question 3", "text": "Q3answer3","data-result":true},
+                 {"question": "Question 3", "text": "Q3answer4","data-result":false}
                ],
-               [{"question": "Question 4", "text": "answer1","data-result":false},
-                {"question": "Question 4", "text": "answer2","data-result":false},
-                {"question": "Question 4", "text": "answer3","data-result":true},
-                {"question": "Question 4", "text": "answer4","data-result":false}
+               [{"question": "Question 4", "text": "Q3answer1","data-result":false},
+                {"question": "Question 4", "text": "Q3answer2","data-result":false},
+                {"question": "Question 4", "text": "Q3answer3","data-result":true},
+                {"question": "Question 4", "text": "Q3answer4","data-result":false}
                 ]];
 
 function countdown() {
@@ -89,12 +89,18 @@ var listElement = document.createElement("ol");
 questionGroup.appendChild(listElement);
 var questionIndex = Math.floor(Math.random() * questionsPool.length);
 console.log(questionIndex);
-questionLiteral.textContent = questionsPool[questionIndex][questionIndex].question;
-    for (i = 0; i < questionsPool[questionIndex];i++) {
-        var litems = document.createElement("li");
-        questionGroup.appendChild(litems);
-        litems.textContent = questionsPool[questionIndex].text;
-    }
+questionLiteral.textContent = questionsPool[questionIndex][0].question;
+console.log(questionsPool[questionIndex][0].text)
+console.log(questionsPool[questionIndex][1].text);
+console.log(questionsPool[questionIndex].length);
+for (i = 0; i < questionsPool[questionIndex].length;i++) {
+    var liItems = document.createElement("li");
+    questionGroup.appendChild(liItems);
+    liItems.textContent = questionsPool[questionIndex][i].text;
+}
+}
+function displayAnswerOpts() {
+
 }
 
 
