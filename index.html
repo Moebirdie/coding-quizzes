@@ -10,24 +10,26 @@
 <body>
     <header>
         <a id="highscore">View Highscore</a>
-        <div class="timerbox">View Timer</div>
+        <div id="timerbox" class="timer-box"></div>
     </header>
     <main class="main-content">
         <div id="title">
             <h1>Title</h1>
             <p class="subheader">subtext</p>
+            <button id="startbutton">Start Quiz</button>
         </div> 
-        <div id="question-box">   
-            <h2 id="question" class="questions">Question 1:</h2>
+        <div id="questionbox">   
+            <h2 id="question" class="questions">question test</h2>
                 <div id="questiongroup" class="question-group">
                     <ol> 
-                        <button><li>answer 1</li></button>
-                        <button><li>answer 2</li></button>
-                        <button><li>answer 3</li></button>
-                        <button><li>answer 4</li></button>
+                        <button><li data-result=false>answer 1test</li></button>
+                        <button><li data-result=false>answer 2test</li></button>
+                        <button><li data-result=true>answer 3test</li></button>
+                        <button><li data-result=false>answer 4test</li></button>
                     </ol>    
                 </div>    
         </div>    
     </main>
+    <script src="./Assets/scripts.js"></script>
 </body>
 </html>
