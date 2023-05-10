@@ -22,27 +22,28 @@ var startButton = document.getElementById('startbutton');
 var highScore = document.getElementById('highscore');
 var questionGroup = document.getElementById('questiongroup');
 var questionLiteral = document.getElementById('question');
+var resetScoreButton = document.getElementById('resetScoreButton');
 
 var questionsPool = [];
-var questionsUsed = [[{ "question": "Question 1", "text": "Q1answer1", "result": false },
-{ "question": "Question 1", "text": "Q1answer2", "result": false },
-{ "question": "Question 1", "text": "Q1answer3", "result": true },
-{ "question": "Question 1", "text": "Q1answer4", "result": false }
+var questionsUsed = [[{ "id": 1, "question": "Question 1", "text": "Q1answer1", "result": false },
+{ "id": 1, "question": "Question 1", "text": "Q1answer2", "result": false },
+{ "id": 1, "question": "Question 1", "text": "Q1answer3", "result": true },
+{ "id": 1, "question": "Question 1", "text": "Q1answer4", "result": false }
 ],
-[{ "question": "Question 2", "text": "Q2answer1", "result": false },
-{ "question": "Question 2", "text": "Q2answer2", "result": false },
-{ "question": "Question 2", "text": "Q2answer3", "result": true },
-{ "question": "Question 2", "text": "Q2answer4", "result": false }
+[{ "id": 2, "question": "Question 2", "text": "Q2answer1", "result": false },
+{ "id": 2, "question": "Question 2", "text": "Q2answer2", "result": false },
+{ "id": 2, "question": "Question 2", "text": "Q2answer3", "result": true },
+{ "id": 2, "question": "Question 2", "text": "Q2answer4", "result": false }
 ],
-[{ "question": "Question 3", "text": "Q3answer1", "result": false },
-{ "question": "Question 3", "text": "Q3answer2", "result": false },
-{ "question": "Question 3", "text": "Q3answer3", "result": true },
-{ "question": "Question 3", "text": "Q3answer4", "result": false }
+[{ "id": 3, "question": "Question 3", "text": "Q3answer1", "result": false },
+{ "id": 3, "question": "Question 3", "text": "Q3answer2", "result": false },
+{ "id": 3, "question": "Question 3", "text": "Q3answer3", "result": true },
+{ "id": 3, "question": "Question 3", "text": "Q3answer4", "result": false }
 ],
-[{ "question": "Question 4", "text": "Q4answer1", "result": false },
-{ "question": "Question 4", "text": "Q4answer2", "result": false },
-{ "question": "Question 4", "text": "Q4answer3", "result": true },
-{ "question": "Question 4", "text": "Q4answer4", "result": false }
+[{ "id": 4, "question": "Question 4", "text": "Q4answer1", "result": false },
+{ "id": 4, "question": "Question 4", "text": "Q4answer2", "result": false },
+{ "id": 4, "question": "Question 4", "text": "Q4answer3", "result": true },
+{ "id": 4, "question": "Question 4", "text": "Q4answer4", "result": false }
 ]];
 
 function countdown() {
@@ -78,9 +79,10 @@ function viewHighScore(event) {
 }
 
 function makeSelection(event) {
+    event.preventDefault();
     var clickedAnswer = event.target;
     var result = clickedAnswer.getAttribute("data-result");
-    console.log(result);
+    console.log(typeof result);
     if (result === "true") {
         newScore = 10;
     } else {
@@ -88,10 +90,9 @@ function makeSelection(event) {
     }
     console.log(newScore);
     saveScores(newScore);
+    pushQuesToUsed();
     console.log("pink");
 }
-
-
 
 function displayQuestion() {
     var listElement = document.createElement("ol");
@@ -109,20 +110,31 @@ function displayQuestion() {
         liButton.appendChild(liItems);
         liItems.textContent = questionsPool[questionIndex][i].text;
         liItems.dataset.result = questionsPool[questionIndex][i].result;
+        liItems.dataset.id = questionsPool[questionIndex][i].id;
     }
 }
-function displayAnswerOpts() {
+function pushQuesToUsed() {
+    var currQuestion = document.getElementById('questiongroup').firstElementChild;
+    var firstChildLi = currQuestion.firstElementChild;
+    var questionId = firstChildLi.getAttribute("data-id");
+    console.log(currQuestion, firstChildLi, questionId);
 
+}
+
+function resetScore(event) {
+    event.preventDefault();
+    localStorage.setItem("high-score", 0);  
 }
 
 function saveScores(score) {
-    var highScore = localStorage.getItem("high-score");
-    var newHighScore = score + highScore;
-    console.log(newHighScore);
-    //localStorage.setItem("high-score", 0);
+    var currHighScore = localStorage.getItem("high-score");
+    var newHighScore = (score + (+currHighScore));
+    console.log(typeof newHighScore);
+    localStorage.setItem("high-score", newHighScore);
     //localStorage.setItem("initials","")
 }
 
 startButton.addEventListener("click", startQuiz);
 highScore.addEventListener("click", viewHighScore);
 questionGroup.addEventListener("click", makeSelection);
+resetScoreButton.addEventListener("click", resetScore);
