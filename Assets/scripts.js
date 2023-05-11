@@ -25,25 +25,25 @@ var questionLiteral = document.getElementById('question');
 var resetScoreButton = document.getElementById('resetScoreButton');
 
 var questionsPool = [];
-var questionsUsed = [[{ "id": 1, "question": "Question 1", "text": "Q1answer1", "result": false },
-{ "id": 1, "question": "Question 1", "text": "Q1answer2", "result": false },
-{ "id": 1, "question": "Question 1", "text": "Q1answer3", "result": true },
-{ "id": 1, "question": "Question 1", "text": "Q1answer4", "result": false }
+var questionsUsed = [[{ "questionid": 1, "question": "Question 1", "text": "Q1answer1", "result": false },
+{ "questionid": 1, "question": "Question 1", "text": "Q1answer2", "result": false },
+{ "questionid": 1, "question": "Question 1", "text": "Q1answer3", "result": true },
+{ "questionid": 1, "question": "Question 1", "text": "Q1answer4", "result": false }
 ],
-[{ "id": 2, "question": "Question 2", "text": "Q2answer1", "result": false },
-{ "id": 2, "question": "Question 2", "text": "Q2answer2", "result": false },
-{ "id": 2, "question": "Question 2", "text": "Q2answer3", "result": true },
-{ "id": 2, "question": "Question 2", "text": "Q2answer4", "result": false }
+[{ "questionid": 2, "question": "Question 2", "text": "Q2answer1", "result": false },
+{ "questionid": 2, "question": "Question 2", "text": "Q2answer2", "result": false },
+{ "questionid": 2, "question": "Question 2", "text": "Q2answer3", "result": true },
+{ "questionid": 2, "question": "Question 2", "text": "Q2answer4", "result": false }
 ],
-[{ "id": 3, "question": "Question 3", "text": "Q3answer1", "result": false },
-{ "id": 3, "question": "Question 3", "text": "Q3answer2", "result": false },
-{ "id": 3, "question": "Question 3", "text": "Q3answer3", "result": true },
-{ "id": 3, "question": "Question 3", "text": "Q3answer4", "result": false }
+[{ "questionid": 3, "question": "Question 3", "text": "Q3answer1", "result": false },
+{ "questionid": 3, "question": "Question 3", "text": "Q3answer2", "result": false },
+{ "questionid": 3, "question": "Question 3", "text": "Q3answer3", "result": true },
+{ "questionid": 3, "question": "Question 3", "text": "Q3answer4", "result": false }
 ],
-[{ "id": 4, "question": "Question 4", "text": "Q4answer1", "result": false },
-{ "id": 4, "question": "Question 4", "text": "Q4answer2", "result": false },
-{ "id": 4, "question": "Question 4", "text": "Q4answer3", "result": true },
-{ "id": 4, "question": "Question 4", "text": "Q4answer4", "result": false }
+[{ "questionid": 4, "question": "Question 4", "text": "Q4answer1", "result": false },
+{ "questionid": 4, "question": "Question 4", "text": "Q4answer2", "result": false },
+{ "questionid": 4, "question": "Question 4", "text": "Q4answer3", "result": true },
+{ "questionid": 4, "question": "Question 4", "text": "Q4answer4", "result": false }
 ]];
 
 function countdown() {
@@ -90,7 +90,8 @@ function makeSelection(event) {
     }
     console.log(newScore);
     saveScores(newScore);
-    pushQuesToUsed();
+    findCurrQuesInArray();
+    //pushQuesToUsed();
     console.log("pink");
 }
 
@@ -110,15 +111,11 @@ function displayQuestion() {
         liButton.appendChild(liItems);
         liItems.textContent = questionsPool[questionIndex][i].text;
         liItems.dataset.result = questionsPool[questionIndex][i].result;
-        liItems.dataset.id = questionsPool[questionIndex][i].id;
     }
-}
-function pushQuesToUsed() {
-    var currQuestion = document.getElementById('questiongroup').firstElementChild;
-    var firstChildLi = currQuestion.firstElementChild;
-    var questionId = firstChildLi.getAttribute("data-id");
-    console.log(currQuestion, firstChildLi, questionId);
-
+    var removeQuestion = questionsPool[questionIndex];
+    questionsPool.splice(questionIndex,1);
+    console.log(removeQuestion)
+    console.log(questionsPool,questionsUsed);        
 }
 
 function resetScore(event) {
