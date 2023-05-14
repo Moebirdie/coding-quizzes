@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="./Assets/style.css"> </link>
+    <link rel="stylesheet" href="./Assets/reset.css">
+    </link>
+    <link rel="stylesheet" href="./Assets/style.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@400;500&family=Roboto&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
     <header>
-        <a id="highscore">View Highscores</a>
-        <div id="timer">Time Left: <span id="timerbox"></span></div>
+        <div class="header-container">
+            <div class="highscorebuttons">
+                <button id="highscore">View Highscores</button>
+                <button id="resetScoreButton">Reset Highscore</button>
+            </div>
+            <div id="timer">Time Left <span id="timerbox"></span></div>
+        </div>
+    </header>
     </header>
     <main class="main-content">
         <div id="title">
             <h1>Coding Quiz Challenge</h1>
-            <p class="subheader">subtext</p>
+            <p id="subheader">Welcome to the coding quiz challenge!<br>For each correct answer you will receive
+                10pts.<br>For each incorrect answer,<br>you will have 10 seconds removed from your time.</p>
             <button id="startbutton">Start Quiz</button>
-            <button id="resetScoreButton">Reset Highscore</button>
             <button id="playagain" class="hide">Play Again</button>
 
-        </div> 
-        <div id="questionbox">   
+        </div>
+        <div id="questionbox">
             <h2 id="question" class="questions"></h2>
-                <div id="questiongroup" class="question-group">
-                    
-                </div>    
+            <div id="questiongroup" class="question-group">
+
+            </div>
         </div>
         <div id="resultmessage" class="resultdisplay"></div>
         <div>
-        <div id="gameover"></div>
-        <div><button id="saveHighScoreBtn" class="hide">Save High Score</button></div>
+            <div id="gameover"></div>
+            <div><button id="saveHighScoreBtn" class="hide">Save High Score</button></div>
+
     </main>
+
     <script src="./Assets/scripts.js"></script>
 </body>
-</html>
 
+</html>
