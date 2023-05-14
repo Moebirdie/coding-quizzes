@@ -33,25 +33,35 @@ var saveHighScoreBtn = document.getElementById('saveHighScoreBtn');
 var savedHighScore = [];
 
 var questionsPool = [];
-var questionsUsed = [[{ "questionid": 1, "question": "Question 1", "text": "Q1answer1", "result": false },
-{ "questionid": 1, "question": "Question 1", "text": "Q1answer2", "result": false },
-{ "questionid": 1, "question": "Question 1", "text": "Q1answer3", "result": true },
-{ "questionid": 1, "question": "Question 1", "text": "Q1answer4", "result": false }
+var questionsUsed = [[{ "questionid": 1, "question": "Commonly used data types DO NOT include: ", "text": "strings", "result": false },
+{ "questionid": 1, "question": "Commonly used data types DO NOT include: ", "text": "booleans", "result": false },
+{ "questionid": 1, "question": "Commonly used data types DO NOT include: ", "text": "alerts", "result": true },
+{ "questionid": 1, "question": "Commonly used data types DO NOT include: ", "text": "numbers", "result": false }
 ],
-[{ "questionid": 2, "question": "Question 2", "text": "Q2answer1", "result": false },
-{ "questionid": 2, "question": "Question 2", "text": "Q2answer2", "result": false },
-{ "questionid": 2, "question": "Question 2", "text": "Q2answer3", "result": true },
-{ "questionid": 2, "question": "Question 2", "text": "Q2answer4", "result": false }
+[{ "questionid": 2, "question": "The condition in an if / else statement is enclosed within ______.", "text": "quotes", "result": false },
+{ "questionid": 2, "question": "The condition in an if / else statement is enclosed within ______.", "text": "curly brackets", "result": false },
+{ "questionid": 2, "question": "The condition in an if / else statement is enclosed within ______.", "text": "parentheses", "result": true },
+{ "questionid": 2, "question": "The condition in an if / else statement is enclosed within ______.", "text": "square brackets", "result": false }
 ],
-[{ "questionid": 3, "question": "Question 3", "text": "Q3answer1", "result": false },
-{ "questionid": 3, "question": "Question 3", "text": "Q3answer2", "result": false },
-{ "questionid": 3, "question": "Question 3", "text": "Q3answer3", "result": true },
-{ "questionid": 3, "question": "Question 3", "text": "Q3answer4", "result": false }
+[{ "questionid": 3, "question": "Arrays in JavaScript can be used to store _______.", "text": "numbers and strings", "result": false },
+{ "questionid": 3, "question": "Arrays in JavaScript can be used to store _______.", "text": "other arrays", "result": false },
+{ "questionid": 3, "question": "Arrays in JavaScript can be used to store _______.", "text": "booleans", "result": false },
+{ "questionid": 3, "question": "Arrays in JavaScript can be used to store _______.", "text": "all of the above", "result": true }
 ],
-[{ "questionid": 4, "question": "Question 4", "text": "Q4answer1", "result": false },
-{ "questionid": 4, "question": "Question 4", "text": "Q4answer2", "result": false },
-{ "questionid": 4, "question": "Question 4", "text": "Q4answer3", "result": true },
-{ "questionid": 4, "question": "Question 4", "text": "Q4answer4", "result": false }
+[{ "questionid": 4, "question": "String values must be enclosed within ______ when being assigned to variables.", "text": "commas", "result": false },
+{ "questionid": 4, "question": "String values must be enclosed within ______ when being assigned to variables.", "text": "curly brackets", "result": false },
+{ "questionid": 4, "question": "String values must be enclosed within ______ when being assigned to variables.", "text": "quotes", "result": true },
+{ "questionid": 4, "question": "String values must be enclosed within ______ when being assigned to variables.", "text": "parentheses", "result": false }
+],
+[{ "questionid": 5, "question": "A very useful tool used during development and debugging for printing content to the debugger is:", "text": "JavaScript", "result": false },
+{ "questionid": 5, "question": "A very useful tool used during development and debugging for printing content to the debugger is:.", "text": "terminal/bash", "result": false },
+{ "questionid": 5, "question": "A very useful tool used during development and debugging for printing content to the debugger is:", "text": "for keeps", "result": false },
+{ "questionid": 5, "question": "A very useful tool used during development and debugging for printing content to the debugger is:", "text": "console.log", "result": true }
+],
+[{ "questionid": 6, "question": "An example of a boolean variable is which of the following:", "text": "true", "result": true },
+{ "questionid": 6, "question": "An example of a boolean variable is which of the following:", "text": "'yes'", "result": false },
+{ "questionid": 6, "question": "An example of a boolean variable is which of the following:", "text": "235", "result": false },
+{ "questionid": 6, "question": "An example of a boolean variable is which of the following:", "text": "'true'", "result": false }
 ]];
 
 function startQuiz(event) {
@@ -98,8 +108,8 @@ function displayQuestion() {
         for (i = 0; i < questionsPool[questionIndex].length; i++) {
            var liItems = document.createElement("li");
             var liButton = document.createElement("button");
-            listElement.appendChild(liItems);
-            liItems.appendChild(liButton);
+            listElement.appendChild(liButton);
+           // liButton.appendChild(liItems);
             liButton.textContent = questionsPool[questionIndex][i].text;
             liButton.dataset.result = questionsPool[questionIndex][i].result;
         }
@@ -168,7 +178,7 @@ function lastQuestion() {
 
 function displayTimeUp() {
     timer.textContent = "";
-    subHeader.textContent = "Game Over";
+    subHeader.textContent = "All Done!";
     subHeader.setAttribute("style","font-size:26px;color:var(--darkred)");
     gameover();
     return;
@@ -184,7 +194,7 @@ function gameover() {
     gameoverdiv.appendChild(gameoverH2);
     gameoverdiv.appendChild(gameoverP);
     gameoverdiv.appendChild(gameoverInput);
-    gameoverH2.textContent = ("Your Score is " + score);
+    gameoverH2.textContent = ("Your Final Score is " + score);
     gameoverP.textContent = "Input your initials:";
     gameoverInput.setAttribute("name", "initials");
     saveHighScoreBtn.removeAttribute("class", "hide");
