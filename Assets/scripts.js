@@ -181,7 +181,6 @@ function gameover() {
     gameoverP.textContent = "Input your initials:";
     gameoverInput.setAttribute("name", "initials");
     saveHighScoreBtn.removeAttribute("class", "hide");
-    playAgainButton.removeAttribute("class","hide");
     console.log("game over");
     return;
 }
@@ -221,6 +220,8 @@ function saveFinalScore(event) {
 saveHighScoreBtn.setAttribute("class", "hide");
 gameoverdiv.innerHTML = "";
 var inits = "";
+subHeader.setAttribute("class","hide");
+playAgainButton.removeAttribute("class","hide");
 }
 
 function refresh() {
