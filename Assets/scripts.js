@@ -1,21 +1,3 @@
-//multiple choice questions - add ol and li elements
-//associate questions and answers
-//one has to be the correct answer
-//timer ***** done
-//dynamically updated HTML and CSS via js
-//store high scores
-//display high scores
-//start button - timer kicks off  *** done
-//start button - presented with a question
-//response to question triggers - correct or incorrect on bottom display
-//response to question - triggers points
-//response to question - triggers another question
-//response to question - incorrect answer subtracts time clock
-//game over - when all questions answered OR
-//game over - when timer reaches 0
-//on game over - save initials and score
-//hover effect on button
-
 var timerBox = document.getElementById('timerbox');
 var timer = document.getElementById('timer');
 var questionBox = document.getElementById('questionbox');
@@ -24,7 +6,6 @@ var startButton = document.getElementById('startbutton');
 var playAgainButton = document.getElementById('playagain');
 var highScore = document.getElementById('highscore');
 var questionGroup = document.getElementById('questiongroup');
-//var questionGroup = document.querySelectorAll('.quests');
 var questionLiteral = document.getElementById('question');
 var resetHighScoreButton = document.getElementById('resetScoreButton');
 var resultMessage = document.getElementById('resultmessage');
@@ -132,7 +113,7 @@ function makeSelection(event) {
         clickedAnswer.setAttribute("style","background-color: var(--lightgreen)");
     } else {
         var newScore = 0;
-        var adjTimeLeft = currentTimer - 10;
+        var adjTimeLeft = currentTimer - 8;
         clickedAnswer.setAttribute("style","background-color:var(--darkred)");
     }
     clearInterval(timeInterval);
@@ -194,7 +175,7 @@ function gameover() {
     gameoverdiv.appendChild(gameoverH2);
     gameoverdiv.appendChild(gameoverP);
     gameoverdiv.appendChild(gameoverInput);
-    gameoverH2.textContent = ("Your Final Score is " + score);
+    gameoverH2.textContent = ("Your final score is " + score);
     gameoverP.textContent = "Input your initials:";
     gameoverInput.setAttribute("name", "initials");
     saveHighScoreBtn.removeAttribute("class", "hide");

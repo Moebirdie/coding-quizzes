@@ -35,7 +35,8 @@ footer {
   color: var(--offwhite);
   padding: 30px;
   font-size: 16px;
-  bottom: 0;
+  position: fixed;
+  bottom: 0%;
 }
 
 .header-container {
@@ -151,6 +152,7 @@ button {
   color: var(--offwhite);
   background-color: var(--lightgreen);
   border-color: var(--lightgreen);
+  font-size: 18px;
 }
 
 #resetScoreButton,
@@ -158,12 +160,28 @@ button {
   margin-top: 20px;
   padding: 5px 10px;
   box-shadow: 1px 1px 1px var(--lightgray);
+  font-size: 16px;
 }
 #resetScoreButton {
   background-color: var(--lightgray);
   border-color: var(--lightgray);
   color: var(--darkgreen);
 }
+@media only screen and (max-width: 1200px) {
+  .main-content {
+    max-width: 600px;
+  }
+  .header-container {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+  }
+  #subheader {
+    font-size: 16px;
+  }
+} 
 
 @media only screen and (max-width: 600px) {
   .header-container {
@@ -181,7 +199,11 @@ button {
   }
 
   .main-content {
-    padding: 10px 0px;
+    padding: 10px;
+    padding-bottom: 50px;
+  }
+  .resultdisplay {
+    margin-bottom: 60px;
   }
 
 }
