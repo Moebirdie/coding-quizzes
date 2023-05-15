@@ -3,6 +3,7 @@
 The Coding Quiz Challenge introduces the user to one of the methods potential employers may use to test the knowledge/skill level of a candidate applying for a position.  The creation of the quiz involved technical skills to demonstration various api methods including adding various elements to the webpage, including styling, saving and retrieving data from storage, for loops and arrays, and various other skills which have been learned this week. 
 
 The GitHub repository for this challenge is: https://github.com/Moebirdie/coding-quizzes
+
 The live quiz may be accessed by navigating to: https://moebirdie.github.io/coding-quizzes/
 
 
