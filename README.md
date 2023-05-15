@@ -35,8 +35,9 @@ When a user clicks on the start button, the following behavior can be seen:
 
 
 ### Quiz in progress
-![ZFLOhSc](https://github.com/Moebirdie/coding-quizzes/assets/93432701/d22a5cd2-ccc6-4eb9-a618-fa8a4421d724)
-![VKHecVJ](https://github.com/Moebirdie/coding-quizzes/assets/93432701/770ec301-a2f1-42b2-a7bd-adf76edc7142)
+![tq3eAqj](https:![6GBWXzC](https://github.com/Moebirdie/coding-quizzes/assets/93432701/c6fbc84a-424a-4885-abf8-f0fa63a93119)
+![6GBWXzC](https://github.com/Moebirdie/coding-quizzes/assets/93432701/8cc13663-a677-4720-89bb-5319ad601acf)
+
 
 ### Quiz completed
 ![5MvEW6R](https://github.com/Moebirdie/coding-quizzes/assets/93432701/41ef7f29-c2b5-4f83-91da-38a3d771ca99)
