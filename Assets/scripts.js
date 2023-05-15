@@ -74,6 +74,8 @@ function countdown(timeLeft) {
 function displayQuestion() {
     resultMessage.innerHTML = "";
     questionGroup.innerHTML = '';
+    playAgainButton.setAttribute("class","hide");
+    subHeader.setAttribute("class","hide");
     var listElement = document.createElement("ol");
     questionGroup.appendChild(listElement);
     var questionIndex = Math.floor(Math.random() * questionsPool.length);
@@ -90,7 +92,6 @@ function displayQuestion() {
            var liItems = document.createElement("li");
             var liButton = document.createElement("button");
             listElement.appendChild(liButton);
-           // liButton.appendChild(liItems);
             liButton.textContent = questionsPool[questionIndex][i].text;
             liButton.dataset.result = questionsPool[questionIndex][i].result;
         }
@@ -123,6 +124,8 @@ function makeSelection(event) {
 }
 
 function viewHighScores(event) {
+    startButton.setAttribute("class","hide");
+    playAgainButton.removeAttribute("class","hide");
     questionBox.innerHTML = "";
     var displayHighScores = localStorage.getItem("high-score");
     var highScoreItems = JSON.parse(displayHighScores);
@@ -134,8 +137,6 @@ function viewHighScores(event) {
       UlEl.appendChild(LiEl);
       LiEl.textContent = (highScoreItems[scores].initials + "  -   " + highScoreItems[scores].scores); 
       }
-      startButton.setAttribute("class","hide");
-      playAgainButton.removeAttribute("class","hide");
     }
 
 function displayResult(result) {
@@ -159,6 +160,7 @@ function lastQuestion() {
 
 function displayTimeUp() {
     timer.textContent = "";
+    subHeader.removeAttribute("class","hide");
     subHeader.textContent = "All Done!";
     subHeader.setAttribute("style","font-size:26px;color:var(--darkred)");
     gameover();
@@ -179,6 +181,7 @@ function gameover() {
     gameoverP.textContent = "Input your initials:";
     gameoverInput.setAttribute("name", "initials");
     saveHighScoreBtn.removeAttribute("class", "hide");
+    playAgainButton.removeAttribute("class","hide");
     console.log("game over");
     return;
 }

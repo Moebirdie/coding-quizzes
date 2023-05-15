@@ -28,5 +28,24 @@ When a user clicks on the start button, the following behavior can be seen:
 - Questions are displayed in random order for each instance of the quiz so that answers can't be memorized without reading the questions. 
 
 
+## Visual Description
+
+### When quiz opens
+![G4BAzZe](https://github.com/Moebirdie/coding-quizzes/assets/93432701/c8d644ed-a0b9-40f1-8fcf-60b573df306d)
+
+
+### Quiz in progress
+![ZFLOhSc](https://github.com/Moebirdie/coding-quizzes/assets/93432701/d22a5cd2-ccc6-4eb9-a618-fa8a4421d724)
+![VKHecVJ](https://github.com/Moebirdie/coding-quizzes/assets/93432701/770ec301-a2f1-42b2-a7bd-adf76edc7142)
+
+### Quiz completed
+![5MvEW6R](https://github.com/Moebirdie/coding-quizzes/assets/93432701/41ef7f29-c2b5-4f83-91da-38a3d771ca99)
+
+
+### Viewing High Scores
+![VEPxiLJ](https://github.com/Moebirdie/coding-quizzes/assets/93432701/49b107e5-9493-435f-8f0b-8402a89aeb9e)
+
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
