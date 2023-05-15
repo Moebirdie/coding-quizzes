@@ -40,7 +40,8 @@ When a user clicks on the start button, the following behavior can be seen:
 
 
 ### Quiz completed
-![5MvEW6R](https://github.com/Moebirdie/coding-quizzes/assets/93432701/41ef7f29-c2b5-4f83-91da-38a3d771ca99)
+![HFnHfxv](https://github.com/Moebirdie/coding-quizzes/assets/93432701/69a229b5-97a8-420c-b184-0337187001bc)
+![yEc0Xgn](https://github.com/Moebirdie/coding-quizzes/assets/93432701/4a1b1072-e415-4608-a595-07236cb98de6)
 
 
 ### Viewing High Scores
