@@ -153,6 +153,7 @@ button {
   background-color: var(--lightgreen);
   border-color: var(--lightgreen);
   font-size: 18px;
+  cursor: grab;
 }
 
 #resetScoreButton,
