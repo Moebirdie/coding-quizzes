@@ -208,7 +208,7 @@ function saveFinalScore(event) {
         "initials": inits
     }
     var existHighScores = localStorage.getItem("high-score");
-    if (existHighScores !== "") {
+    if (existHighScores !== null) {
         var newexistHighScores = JSON.parse(existHighScores);
         newexistHighScores.push(highScores);
         localStorage.setItem("high-score", JSON.stringify(newexistHighScores));
