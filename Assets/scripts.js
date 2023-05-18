@@ -189,7 +189,7 @@ function resetScore() {
     localStorage.setItem("current-score", 0);
 }
 function resetHighScore() {
-    localStorage.setItem("high-score", "");
+    localStorage.removeItem("high-score");
     refresh();
 } 
 
@@ -208,6 +208,7 @@ function saveFinalScore(event) {
         "initials": inits
     }
     var existHighScores = localStorage.getItem("high-score");
+    console.log(existHighScores);
     if (existHighScores !== null) {
         var newexistHighScores = JSON.parse(existHighScores);
         newexistHighScores.push(highScores);
