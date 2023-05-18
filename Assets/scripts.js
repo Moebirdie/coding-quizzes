@@ -226,7 +226,7 @@ playAgainButton.removeAttribute("class","hide");
 }
 
 function refresh() {
-    document.location.reload();
+    window.location.reload();
 }
 
 
